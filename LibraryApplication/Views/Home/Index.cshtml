@@ -1,0 +1,147 @@
+﻿@model LibraryViewModel
+
+<div class="text-center mb-4 jumbotron ">
+    <h1 class="display-4">@ViewBag.Message1</h1>
+</div>
+<section>
+    <div class="row mb-4">
+        <div class=" col-md-4">
+            @Html.Partial("_LibraryPartial")
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-2 shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="~/images/book1.jpg" width="100%" height="225" />
+                    </div>
+                    @*<div class="card-body">
+                            <p class="card-text">hghkjhkjhjkmhkjh</p>
+                        </div>*@
+                    @*<div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            </div>
+                        </div>*@
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-2 shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="~/images/book2.jpg" width="100%" height="225" />
+                    </div>
+                    @*<div class="card-body">
+                            <p class="card-text">hghkjhkjhjkmhkjh</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            </div>
+                        </div>*@
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-2 shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="~/images/book3.jpg" width="100%" height="225" />
+                    </div>
+                    @*<div class="card-body">
+                            <p class="card-text">hghkjhkjhjkmhkjh</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="bg-info">
+    <h1 class="text-center text-white mb-2">@ViewBag.Message2</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Book Id</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Author Id</th>
+                <th scope="col">Publisher Id</th>
+                <th scope="col">Date of Publish</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lib in Model.Book)
+            {
+                <tr>
+                    <td scope="row">@lib.Book_id</td>
+                    <td>@lib.Book_name</td>
+                    <td>@lib.Price</td>
+                    <td>@lib.Au_id</td>
+                    <td>@lib.Pub_id</td>
+                    <td>@lib.Dt_of_Publish</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+
+    <h1 class="text-center text-white mb-2">@ViewBag.Message3</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Author Id</th>
+                <th scope="col">Author Name</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lib in Model.Author)
+            {
+                <tr>
+                    <th scope="row"> @lib.Au_id</th>
+                    <td>@lib.Au_name</td>
+                    <td>@lib.Sex</td>
+                    <td>@lib.Phone</td>
+                    <td>@lib.Address</td>
+                    <td>@lib.City</td>
+                    <td>@lib.State</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+    <h1 class="text-center text-white mb-2">@ViewBag.Message4</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Publisher Id</th>
+                <th scope="col">Publisher Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lib in Model.Publisher)
+            {
+                <tr>
+                    <th scope="row"> @lib.Pub_id</th>
+                    <td>@lib.Pub_name</td>
+                    <td>@lib.Phone</td>
+                    <td>@lib.Address</td>
+                    <td>@lib.City</td>
+                    <td>@lib.State</td>
+                    <td>@lib.Country</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

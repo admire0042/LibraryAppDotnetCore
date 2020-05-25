@@ -1,0 +1,32 @@
+﻿@model List<Book>
+    @{
+    ViewData["Title"] = "List";
+    }
+    <h1 class="text-center h1">@ViewBag.Message</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Book Id</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Author Id</th>
+                <th scope="col">Publisher Id</th>
+                <th scope="col">Date of Publish</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+            <tr>
+                <td scope="row">@book.Book_id</td>
+                <td>@book.Book_name</td>
+                <td>@book.Price</td>
+                <td>@book.Au_id</td>
+                <td>@book.Pub_id</td>
+                <td>@book.Dt_of_Publish</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="Book" asp-action="Create" class="btn btn-success">Add Book</a>
